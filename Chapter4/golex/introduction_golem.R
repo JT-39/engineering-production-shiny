@@ -51,3 +51,38 @@ Sys.setenv("GOLEM_CONFIG_ACTIVE" = "production")
 get_golem_config(
   "MONGODBURL"
 )
+
+
+"inst/app/www/"
+# folder contains all files that are made available at application run time
+# use the following function to add these files
+golem_add_external_resources()
+golem::add_css_file()
+golem::add_js_file()
+golem::add_js_handler()
+golem::use_external_css_file()
+golem::use_external_js_file()
+golem::use_favicon()
+
+
+# Link to file that is read during application generation use app_sys()
+includeMarkdown( app_sys("app/www/howto.md") )
+
+# Add any new external file into "inst/app/www/" so can use in UI
+# For example
+# Adding images in 
+"inst/app/img"
+
+# Calling 
+addResourcePath( 'img', system.file('app/img', package = 'golex') )
+
+# Adding elements to your UI with 
+tags$img(src = "img/name.png")
+
+# The dev/ folder is to be used as a notebook for your development process: 
+# you will find here a series of functions that can be used throughout your 
+# project.
+
+# The man/ folder includes the package documentation. It is a common folder 
+# automatically filled when you document your app, notably when running the 
+# dev/run_dev.R script and the document_and_reload() function.
