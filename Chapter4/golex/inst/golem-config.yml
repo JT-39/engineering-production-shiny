@@ -1,0 +1,10 @@
+default:
+  golem_name: golex
+  golem_version: 0.0.1
+  app_prod: no
+  MONGODBURL: localhost
+production:
+  app_prod: yes
+  MONGODBURL: 0.0.0.0
+dev:
+  golem_wd: !expr golem::pkg_path()

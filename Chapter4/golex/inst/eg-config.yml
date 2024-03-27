@@ -1,0 +1,20 @@
+default: 
+  url: mongo
+  mongoport: 12345
+  mongodb: users
+  mongocollecton: hex
+server1:
+  url: mongo
+  mongoport: 6543
+  mongodb: users
+  mongocollecton: hex
+server2:
+  url: mongo
+  mongoport: 9876
+  mongodb: shiny
+  mongocollecton: hexmake
+server2:
+  url: 127.0.0.1
+  mongoport: 3214
+  mongodb: connect
+  mongocollecton: app1
